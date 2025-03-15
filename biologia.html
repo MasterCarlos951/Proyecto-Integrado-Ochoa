@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receta de Jabón de Burbujas</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome para iconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #FFDD44 0%, #80DAFF 100%);
+            min-height: 100vh;
+            padding-bottom: 60px;
+        }
+        
+        .main-container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0;
+        }
+        
+        .header {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px 15px 0 0;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .content-card {
+            background-color: white;
+            border-radius: 0 0 15px 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            color: #3498db;
+            font-weight: 600;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .tabla-materiales {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .tabla-materiales th {
+            background-color: #3498db;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .home-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+        
+        .home-button:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+            color: white;
+        }
+        
+        .home-text {
+            position: absolute;
+            top: 20px;
+            left: 80px;
+            font-weight: 600;
+            color: #3498db;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        .video-section {
+            background-color: #f0f8ff;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        .video-container {
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .video-container video {
+            width: 100%;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="header">
+            <a href="index.html" class="home-button">
+                <i class="fa-solid fa-house"></i>
+            </a>
+            <span class="home-text">Inicio</span>
+            <h1>Receta de Jabón de Burbujas</h1>
+        </div>
+        
+        <div class="content-card">
+            <div class="section">
+                <h2><i class="fa-solid fa-flask me-2"></i>Materiales y Clasificación</h2>
+                <div class="table-responsive">
+                    <table class="table table-hover tabla-materiales">
+                        <thead>
+                            <tr>
+                                <th>Material</th>
+                                <th>Clasificación</th>
+                                <th>Función</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Agua</td>
+                                <td>Disolvente</td>
+                                <td>Base líquida que permite la mezcla de los componentes</td>
+                            </tr>
+                            <tr>
+                                <td>Glicerina</td>
+                                <td>Humectante</td>
+                                <td>Retiene la humedad y prolonga la vida de las burbujas</td>
+                            </tr>
+                            <tr>
+                                <td>Jabón líquido</td>
+                                <td>Tensioactivo</td>
+                                <td>Reduce la tensión superficial del agua</td>
+                            </tr>
+                            <tr>
+                                <td>Sacarosa (Azúcar)</td>
+                                <td>Estabilizador</td>
+                                <td>Fortalece la película de la burbuja</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2><i class="fa-solid fa-atom me-2"></i>Explicación de los Puentes de Hidrógeno</h2>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="lead">
+                            El agua es una molécula polar capaz de formar enlaces de hidrógeno con otras moléculas.
+                        </p>
+                        <p>
+                            Los puentes de hidrógeno son interacciones electrostáticas que ocurren entre un átomo de hidrógeno unido covalentemente a un átomo muy electronegativo (como oxígeno) y otro átomo electronegativo.
+                        </p>
+                        <p>
+                            La sacarosa contiene grupos hidroxilo (-OH) que pueden interactuar con el agua mediante estos puentes, permitiendo que se disuelva y mejore la elasticidad de las burbujas. Esta interacción molecular es fundamental para la estabilidad de la película de jabón.
+                        </p>
+                        <p>
+                            La glicerina también forma puentes de hidrógeno con el agua, lo que ayuda a retener la humedad y evita que las burbujas se sequen rápidamente, aumentando así su durabilidad.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+       <div class="video-section">
+    <h2><i class="fa-solid fa-video me-2"></i>Video Explicativo</h2>
+    <div class="ratio ratio-16x9 video-container">
+        <iframe 
+            src="https://www.youtube.com/embed/VtRU7kgXKfI" 
+            title="Generador de Burbujas Tutorial" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+    </div>
+    <div class="mt-3 text-center">
+        <p class="text-muted"><small>Este video muestra el proceso de elaboracion de la receta de burbujas</small></p>
+    </div>
+</div>
+            <div class="footer">
+                <p>© 2025 Receta de Jabón de Burbujas | Todos los derechos reservados</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expresión Artística y Diseño</title>
+    <!-- Bootstrap CSS desde CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Íconos de Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(120deg, #f5f7fa, #e0eafc);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+        }
+        
+        .header {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 25px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-bottom: 3px solid #6c7fee;
+        }
+        
+        .header h1 {
+            color: #4a5568;
+            font-weight: 700;
+            margin: 0;
+        }
+        
+        .inicio-btn {
+            background-color: #6c7fee;
+            border: none;
+            transition: all 0.3s;
+        }
+        
+        .inicio-btn:hover {
+            background-color: #5363e2;
+            transform: translateY(-2px);
+        }
+        
+        .section-title {
+            color: #4a5568;
+            font-weight: 600;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            border-left: 5px solid #6c7fee;
+            padding-left: 10px;
+        }
+        
+        .content-section {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        
+        .formula-img-container {
+            border: 2px dashed #6c7fee;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            background-color: rgba(108, 127, 238, 0.05);
+            text-align: center;
+        }
+        
+        .formula-img-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        /* Corrección del carousel */
+        .carousel {
+            margin: 0 auto;
+        }
+        
+        .carousel-inner {
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #f8f9fa;
+        }
+        
+        .carousel-item {
+            height: 400px; /* Altura fija para todos los elementos del carousel */
+            text-align: center;
+            background-color: #e9ecef;
+        }
+        
+        .carousel-item img {
+            max-height: 100%;
+            max-width: 100%;
+            width: auto;
+            height: auto;
+            margin: 0 auto;
+            object-fit: contain;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .carousel-control-prev, .carousel-control-next {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(108, 127, 238, 0.7);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.8;
+        }
+        
+        .carousel-control-prev:hover, .carousel-control-next:hover {
+            opacity: 1;
+        }
+        
+        .carousel-control-prev {
+            left: 20px;
+        }
+        
+        .carousel-control-next {
+            right: 20px;
+        }
+        
+        .carousel-indicators {
+            bottom: -40px;
+        }
+        
+        .carousel-indicators button {
+            background-color: #6c7fee;
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            margin: 0 5px;
+        }
+        
+        .footer {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px 0;
+            text-align: center;
+            margin-top: 30px;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        /* Para asegurar que la imagen de placeholder se vea bien */
+        .placeholder-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #6c757d;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Encabezado -->
+    <header class="header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1>Expresión Artística y Diseño</h1>
+                </div>
+                <div class="col-md-4 text-end">
+    <a href="index.html" class="btn inicio-btn text-white px-4 py-2">
+        <i class="bi bi-house-fill me-2"></i> Inicio
+    </a>
+</div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container py-4">
+        <!-- Sección de Fórmula Molecular -->
+        <h2 class="section-title">Fórmula Molecular</h2>
+        <div class="content-section">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="mb-4">Aquí puedes ver la fórmula molecular:</p>
+                    
+                    <!-- Contenedor para la imagen de fórmula molecular -->
+                    <div class="formula-img-container">
+                        <!-- Reemplaza "ruta-a-tu-imagen.jpg" con la ruta a tu imagen -->
+                        <img src="Formula.png" alt="Fórmula Molecular">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sección de Carousel/Diseño -->
+        <h2 class="section-title">Diseño</h2>
+        <div class="content-section">
+            <!-- Carrusel corregido -->
+            <div id="carouselDiseno" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselDiseno" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselDiseno" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselDiseno" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <!-- Reemplaza "ruta-imagen-1.jpg" con la ruta a tu primera imagen -->
+                        <img src="Diseño1.png" class="d-block" alt="Diseño 1">
+                    </div>
+                    <div class="carousel-item">
+                        <!-- Reemplaza "ruta-imagen-2.jpg" con la ruta a tu segunda imagen -->
+                        <img src="Diseño2.png" class="d-block" alt="Diseño 2">
+                    </div>
+                    <div class="carousel-item">
+                        <!-- Reemplaza "ruta-imagen-3.jpg" con la ruta a tu tercera imagen -->
+                        <img src="Diseño3.png" class="d-block" alt="Diseño 3">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselDiseno" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselDiseno" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <div class="container">
+            <p class="m-0">&copy; 2025 Expresión Artística y Diseño</p>
+        </div>
+    </footer>
+
+    <!-- Scripts de Bootstrap desde CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

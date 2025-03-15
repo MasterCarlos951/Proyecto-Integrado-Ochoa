@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página principal Proyecto Integrado</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            background: linear-gradient(to right,  
+                #FFD1DC,  /* Rosa pastel */  
+                #FFEBB4,  /* Amarillo suave */  
+                #C1E1C1,  /* Verde menta */  
+                #B3E5FC,  /* Celeste claro */  
+                #D7BDE2   /* Lila suave */  
+            );
+            overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .banner {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(to right, #ffb6c1, #ffffff, #add8e6);
+            color: white;
+            text-align: center;
+            line-height: 200px;
+            font-size: 2em;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            overflow: hidden;
+        }
+
+        .contenedor {
+            margin-top: 240px;
+            padding: 10px;
+            max-width: 100%;
+            background-color: #fff;
+            border: 1px solid #ccc;
+        }
+
+        .fila {
+            display: flex;
+            flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+            align-items: center;
+        }
+
+        @media (min-width: 600px) {
+            .fila {
+                flex-direction: row; /* Cambia a fila en pantallas más grandes */
+            }
+
+            .texto {
+                margin-left: 20px; /* Espacio entre el cuadro y el texto */
+            }
+        }
+        
+        /* Estilos mejorados para el texto */
+        .texto-container {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 35px;
+            margin: 40px auto;
+            max-width: 800px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        
+        .texto-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #FF5370, #1E3A8A);
+        }
+        
+        .texto-container h3 {
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 25px;
+            font-size: 1.4em;
+            line-height: 1.5;
+        }
+        
+        .texto-container h1 {
+            color: #1E3A8A;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin: 30px 0 20px;
+            font-size: 2em;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .texto-container h1::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            background: linear-gradient(to right, #FF5370, #FF8F70);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+        
+        .desarrolladores {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .desarrollador {
+            background: linear-gradient(145deg, rgba(255,255,255,0.6), rgba(255,255,255,0.2));
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-weight: 500;
+            color: #444;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .desarrollador:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            background: linear-gradient(145deg, rgba(255,255,255,0.8), rgba(255,255,255,0.4));
+        }
+
+        .imagen-cuadro {
+            width: 300px;
+            height: 300px;
+            border: 2px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Burbujas */
+        .burbuja {
+            position: absolute;
+            background: linear-gradient(to right, #e0f7fa, #b3e5fc, #81d4fa);
+            border-radius: 50%;
+            animation: burbujear 20s infinite ease-in-out;
+        }
+
+        @keyframes burbujear {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-1000px);
+                opacity: 0;
+            }
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-100% * 5)); } /* Desliza todas las imágenes */
+        }
+        .carousel-img {
+            width: 700px;
+            height: 400px;
+            margin: auto;
+            display: block;
+        }
+        
+        /* Contenedor principal para centrar las filas */
+        .materias-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            max-width: 900px;
+        }
+        
+        /* Estilos mejorados para las filas */
+        .row {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        
+        /* Estilos mejorados para las imágenes y botones */
+        .image-container {
+            position: relative;
+            display: inline-block;
+            width: 220px;
+            height: 220px;
+            margin: 15px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .image-container:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+        
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .image-container:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Estilo para los botones */
+        .image-container button {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(45deg, #FF5370, #FF8F70);
+            color: white;
+            border: none;
+            padding: 15px 0;
+            text-align: center;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        
+        .image-container:hover button {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .image-container button:hover {
+            background: linear-gradient(45deg, #FF8F70, #FF5370);
+            letter-spacing: 1px;
+        }
+        
+        .contador {
+            text-align: center;
+            font-size: 1.5em;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #333;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+            background: rgba(255, 255, 255, 0.6);
+            width: fit-content;
+            margin: 20px auto;
+            padding: 10px 25px;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.5);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+        
+        .contador:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+        
+        /* Clase para la columna de bootstrap */
+        .col-md-4 {
+            display: flex;
+            justify-content: center;
+        }
+        
+        /* Estilo para el carrusel */
+        #carouselExample {
+            margin-top: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            border-radius: 15px;
+            overflow: hidden;
+            max-width: 800px;
+            margin: 30px auto;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let visitas = localStorage.getItem("contadorVisitas") || 0;
+            visitas++;
+            localStorage.setItem("contadorVisitas", visitas);
+            document.getElementById("contador").textContent = "Visitas: " + visitas;
+            
+            // Animación para los botones al cargar la página
+            const containers = document.querySelectorAll('.image-container');
+            containers.forEach((container, index) => {
+                setTimeout(() => {
+                    container.style.opacity = "1";
+                    container.style.transform = "translateY(0)";
+                }, index * 100);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="banner">
+        <img src="logo.png">
+    </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="contador" id="contador">Visitas: 0</div>
+
+<div class="materias-container">
+    <div class="row">
+        <!-- Física -->
+        <div class="col-md-4">
+            <div class="image-container">
+                <img src="Fisica.png" alt="Física">
+                <button onclick="window.open('Fisica.html', '_blank')">Fisica</button>
+            </div>
+        </div>
+        <!-- Estadística -->
+        <div class="col-md-4">
+            <div class="image-container">
+                <img src="Estadistica.jpg" alt="Estadística">
+                <button onclick="window.open('estadistica.html', '_blank')">Estadistica</button>
+            </div>
+        </div>
+        <!-- Inglés -->
+        <div class="col-md-4">
+            <div class="image-container">
+                <img src="Ingles.png" alt="Inglés">
+                <button onclick="window.open('Ingles.html', '_blank')">Ingles</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Biología -->
+        <div class="col-md-4">
+            <div class="image-container">
+                <img src="Biologia.png" alt="Biología">
+                <button onclick="window.open('biologia.html', '_blank')">Biologia</button>
+            </div>
+        </div>
+        <!-- Valores -->
+        <div class="col-md-4">
+            <div class="image-container">
+                <img src="Valores.png" alt="Valores">
+                <button onclick="window.open('Valores.html', '_blank')">Valores</button>
+            </div>
+        </div>
+        <!-- Literatura -->
+        <div class="col-md-4">
+            <div class="image-container">
+                <img src="Literatura.jpg" alt="Literatura">
+                <button onclick="window.open('Literatura.html', '_blank')">Literatura</button>
+            </div>
+        </div>
+         <!-- Expresion Artistica -->
+        <div class="col-md-4">
+            <div class="image-container">
+                <img src="Artes.jpg" alt="Artes">
+                <button onclick="window.open('Artes.html', '_blank')">Artes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sección de texto mejorada -->
+<div class="texto-container">
+    <h3>¡Bienvenidos a nuestro centro de recursos educativos! Aquí encontrarás múltiples recursos disponibles para las materias que necesites explorar.</h3>
+    
+    <h1>Desarrollado por</h1>
+    
+    <div class="desarrolladores">
+        <div class="desarrollador">Carlos Ochoa</div>
+        <div class="desarrollador">Emily Muñoz</div>
+        <div class="desarrollador">Delmy Jimenez</div>
+        <div class="desarrollador">Jonathan Bravo</div>
+    </div>
+</div>
+
+<!-- Carrusel -->
+<div id="carouselExample" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="1.png" class="carousel-img" alt="Imagen 1">
+        </div>
+        <div class="carousel-item">
+            <img src="2.png" class="carousel-img" alt="Imagen 2">
+        </div>
+        <div class="carousel-item">
+            <img src="3.png" class="carousel-img" alt="Imagen 3">
+        </div>
+        <div class="carousel-item">
+            <img src="4.png" class="carousel-img" alt="Imagen 3">
+        </div>
+        <div class="carousel-item">
+            <img src="5.png" class="carousel-img" alt="Imagen 3">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-target="#carouselExample" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-target="#carouselExample" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<!-- Burbujas -->
+<div class="burbuja" style="width: 20px; height: 20px; top: 90%; left: 10%;"></div>
+<div class="burbuja" style="width: 30px; height: 30px; top: 85%; left: 25%;"></div>
+<div class="burbuja" style="width: 40px; height: 40px; top: 80%; left: 50%;"></div>
+<div class="burbuja" style="width: 25px; height: 25px; top: 75%; left: 70%;"></div>
+<div class="burbuja" style="width: 35px; height: 35px; top: 70%; left: 90%;"></div>
+</body>
+</html>
