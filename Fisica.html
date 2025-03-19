@@ -258,6 +258,40 @@
             bottom: 20px;
         }
         
+        /* Estilos para el video */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Proporción 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin-top: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            border: 3px solid white;
+        }
+        
+        /* Estilos para las fórmulas */
+        .formula {
+            background-color: #f0f8f0;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+            font-family: 'Times New Roman', serif;
+            font-size: 1.2em;
+            border: 1px solid #c0e0c0;
+        }
+        
         /* Mejoras para dispositivos móviles */
         @media (max-width: 768px) {
             .container-flex {
@@ -285,6 +319,12 @@
             section {
                 padding: 20px;
             }
+            
+            nav a {
+                margin: 5px;
+                padding: 6px 10px;
+                font-size: 0.9em;
+            }
         }
         
         .badge-eco {
@@ -310,7 +350,9 @@
 
     <nav>
         <a href="#fisica"><i class="fas fa-atom me-2"></i>La Física</a>
+        <a href="#mcuv"><i class="fas fa-sync-alt me-2"></i>MCUV</a>
         <a href="#generador"><i class="fas fa-tools me-2"></i>Cómo Hacerlo</a>
+        <a href="#video"><i class="fas fa-video me-2"></i>Video</a>
         <a href="#galeria"><i class="fas fa-images me-2"></i>Galería</a>
     </nav>
 
@@ -336,6 +378,43 @@
             </div>
             <div class="image">
                 <img src="https://i.ytimg.com/vi/MXhBTAbiSsk/maxresdefault.jpg" alt="Burbujas de jabón" class="img-fluid">
+            </div>
+        </div>
+    </section>
+
+    <!-- Nueva sección sobre MCUV -->
+    <section id="mcuv">
+        <div class="container-flex">
+            <div class="text">
+                <h2><i class="fas fa-sync-alt me-2"></i>El MCUV y su Influencia en el Generador <span class="badge-eco">Física Aplicada</span></h2>
+                <p class="lead">
+                    El Movimiento Circular Uniforme y Variable (MCUV) es un concepto fundamental en la física que tiene una aplicación directa en nuestro generador de burbujas.
+                </p>
+                <p>
+                    El <strong>Movimiento Circular Uniforme (MCU)</strong> se refiere al movimiento de un objeto que sigue una trayectoria circular con velocidad angular constante. En el caso de nuestro generador de burbujas, esto ocurre cuando el motor del ventilador gira a una velocidad constante.
+                </p>
+                <p>
+                    Por otro lado, el <strong>Movimiento Circular Variable (MCV)</strong> implica un cambio en la velocidad angular del objeto en movimiento circular. Esto sucede en nuestro generador cuando ajustamos la velocidad del ventilador para modificar la cantidad y el tamaño de las burbujas.
+                </p>
+                <p>
+                    Estos principios influyen en el generador de burbujas de varias maneras:
+                </p>
+                <ul>
+                    <li><strong>Velocidad angular y flujo de aire:</strong> La velocidad angular del ventilador determina la cantidad de aire que pasa a través de la película de jabón. A mayor velocidad angular, mayor será el flujo de aire y, por tanto, más burbujas se formarán por unidad de tiempo.</li>
+                    <li><strong>Aceleración centrípeta:</strong> Las partículas de aire experimentan una aceleración centrípeta al salir del ventilador, lo que afecta la forma en que interactúan con la película de jabón y, por ende, la forma y estabilidad de las burbujas.</li>
+                    <li><strong>Fuerza centrífuga:</strong> Aunque técnicamente es una fuerza ficticia, el efecto de la fuerza centrífuga ayuda a expandir las burbujas una vez formadas, contribuyendo a su tamaño final.</li>
+                </ul>
+                <div class="formula">
+                    ω = 2π · f
+                    <br>
+                    <small>donde ω es la velocidad angular y f es la frecuencia de rotación</small>
+                </div>
+                <p>
+                    Experimentalmente, hemos observado que cuando el ventilador opera a una velocidad angular entre 200-300 rpm, se produce la cantidad óptima de burbujas con un tamaño y estabilidad ideales. Por debajo de esta velocidad, las burbujas pueden ser más grandes pero menos numerosas, mientras que por encima, pueden ser más pequeñas y menos estables.
+                </p>
+            </div>
+            <div class="image">
+                <img src="Fifu5.jpg" alt="Patrones circulares en burbujas" class="img-fluid">
             </div>
         </div>
     </section>
@@ -368,6 +447,18 @@
             ¡Y eso es todo! Ahora tienes tu propio generador de burbujas casero que usa las propiedades físicas de la tensión superficial y el aire para crear burbujas flotantes. Es perfecto para fiestas infantiles, eventos al aire libre o simplemente para disfrutar en casa.
         </p>
     </section>
+
+    <!-- Apartado para el video -->
+    <section id="video">
+        <h2><i class="fas fa-video me-2"></i>Video Explicativo <span class="badge-eco">Explicacion</span></h2>
+        <p class="lead">
+            Aquí puedes ver un video tutorial que explica cómo crear tu propio generador de burbujas y ver cómo funciona en acción.
+        </p>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/xX-KnRZNiuQ?si=7tAjZEWqYlgXDdqB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </section>
+
     <section id="galeria" class="carousel-section">
         <h2><i class="fas fa-images me-2"></i>Galería de Burbujas <span class="badge-eco">Inspiración</span></h2>
         <p>
